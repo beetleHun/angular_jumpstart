@@ -1,10 +1,12 @@
 {
   "name": "angular-kickstart",
+  "author": "Robert Bogar",
+  "repository": "https://github.com/beetleHun/angular_jumpstart.git",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "mine",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "ng": "node_modules/.bin/ng",
+    "start": "ng serve -o -lr=false",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -44,6 +46,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.3.3"
+    "typescript": "^2.5.3"
   }
 }

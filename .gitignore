@@ -9,7 +9,6 @@
 /node_modules
 
 # IDEs and editors
-/.idea
 .project
 .classpath
 .c9/
@@ -34,9 +33,10 @@ testem.log
 /typings
 
 # e2e
-/e2e/*.js
-/e2e/*.map
+/e2e
 
 # System Files
 .DS_Store
 Thumbs.db
+
+.idea
