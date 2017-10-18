@@ -1,0 +1,14 @@
+<div>
+  <h1>{{ title | uppercase | lowercase }}</h1>
+  <ul>
+    <li *ngFor="let t of courses">{{ t }}</li>
+  </ul>
+  <div (click)="onDivClicked()">
+    <button class="btn btn-primary" [class.active]="active" (click)="onSave($event)">Csecs</button>
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/>
+    {{ digit | number:'3.1-1' }}
+    {{ digit | currency:'EUR':true:'3.2-2' }}
+    {{ date | date:'shortDate' }}
+    {{ sum | summary:15 }}
+  </div>
+</div>
