@@ -1,0 +1,5 @@
+<div class="glyphicon glyphicon-heart heart-size cursor"
+     [ngClass]="{'heart-grey': !favourite, 'heart-pink': favourite }"
+     (click)="click()">
+</div>
+<ng-content select=".count"></ng-content>

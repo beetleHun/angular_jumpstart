@@ -1,5 +1,8 @@
 <!--<h1>Angular</h1>-->
 <!--<author></author>-->
 <!--<courses></courses>-->
-<!--<favourite></favourite>-->
-<titleCase></titleCase>
+<favourite [favourite]="post.favourite" (change)="onFavouriteChange($event)"></favourite>
+<!--<titleCase></titleCase>-->
+<!--<like [favourite]="like.liked" [likes]="like.likesCount" (change)="onLikesCountChange($event)">-->
+  <!--<ng-container class="count">{{ like.likesCount }}</ng-container>-->
+<!--</like>-->

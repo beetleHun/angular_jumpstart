@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {FavouriteChangeEventArg} from './favourite/favourite.component';
+// import {LikesChangeEventArg} from './favourite/favourite.component';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Test app';
+
+  public post = {
+    favourite: false
+  };
+
+  // public like: LikesChangeEventArg = {
+  //   body: 'Body of likes component',
+  //   liked: false,
+  //   likesCount: 36
+  // };
+  //
+  // public onLikesCountChange(likes: number) {
+  //   this.like.likesCount = likes;
+  // }
+
+  public onFavouriteChange(eventArgs: FavouriteChangeEventArg) {
+    console.log('Favourite changed ', eventArgs);
+  }
+
 }

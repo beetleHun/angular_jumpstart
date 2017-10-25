@@ -22,8 +22,8 @@ export class TitlePipe implements PipeTransform {
   }
 
   private capitalize(word: string): string {
-    let end = word.substr(1);
     let start = word.substr(0, 1).toUpperCase();
+    let end = word.substr(1);
     return start + end;
   }
 
