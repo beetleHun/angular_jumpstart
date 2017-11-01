@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="default-width">
+      <button class="form-control title" (click)="onClick()"> {{ title }}
+        <span class="glyphicon pull-right "
+              [ngClass]="{ 'glyphicon-chevron-up': clicked, 'glyphicon-chevron-down': !clicked }"></span>
+      </button>
+      <div *ngIf="clicked" class="form-control">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
