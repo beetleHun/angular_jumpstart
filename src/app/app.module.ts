@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {CoursesComponent} from './courses/courses.component';
@@ -18,8 +18,14 @@ import {ZippyComponent} from './zippy/zippy.component';
 import {ContactFormComponent} from './contact-form/contact-form.component';
 import {CourseFormComponent} from './course-form/course-form';
 import {SignupFormComponent} from './signup-form/signup-form.component';
-import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
-import { PasswordChangeFormComponent } from './password-change-form/password-change-form.component';
+import {NewCourseFormComponent} from './new-course-form/new-course-form.component';
+import {PasswordChangeFormComponent} from './password-change-form/password-change-form.component';
+import {PostComponent} from './post/post.component';
+import {HttpModule} from '@angular/http';
+import {PostService} from './post/post.service';
+import {AppErrorHandler} from './common/app-error-handler';
+import { FollowersComponent } from './followers/followers.component';
+import {FollowersService} from './followers/followers.service';
 
 @NgModule({
   declarations: [
@@ -38,14 +44,23 @@ import { PasswordChangeFormComponent } from './password-change-form/password-cha
     CourseFormComponent,
     SignupFormComponent,
     NewCourseFormComponent,
-    PasswordChangeFormComponent
+    PasswordChangeFormComponent,
+    PostComponent,
+    FollowersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [CoursesService, AuthorService],
+  providers: [
+    CoursesService,
+    AuthorService,
+    PostService,
+    FollowersService,
+    {provide: ErrorHandler, useClass: AppErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
