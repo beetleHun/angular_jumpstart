@@ -6,8 +6,8 @@
         <img [src]="follower.avatar_url" class="avatar">
       </div>
       <div class="col-sm-1">
-        <h5>{{ follower.login }}</h5>
-        <a [href]="follower.html_url">{{ follower.html_url }}</a>
+        <a [routerLink]="['/followers', follower.id, follower.login]"><h5>{{ follower.login }}</h5></a>
+        <a [href]="follower.html_url" target="_blank">{{ follower.html_url }}</a>
       </div>
     </div>
   </li>
