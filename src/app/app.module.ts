@@ -31,6 +31,8 @@ import {GithubComponent} from './github/github.component';
 import {NotfoundComponent} from './notfound/notfound.component';
 import {RouterModule} from '@angular/router';
 import {NavbarComponent} from './navbar/navbar.component';
+import {ArchiveHomeComponent} from './archivehome/archive-home.component';
+import {ArchiveComponent} from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import {NavbarComponent} from './navbar/navbar.component';
     NavbarComponent,
     HomeComponent,
     GithubComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ArchiveHomeComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,
@@ -64,10 +68,12 @@ import {NavbarComponent} from './navbar/navbar.component';
     HttpModule,
     RouterModule.forRoot(
       [
-        {path: '', component: HomeComponent},
-        {path: 'followers/:id/:username', component: GithubComponent},
-        {path: 'followers', component: FollowersComponent},
-        {path: 'posts', component: PostComponent},
+        // {path: '', component: HomeComponent},
+        {path: '', component: ArchiveHomeComponent},
+        {path: 'archive/:year/:month', component: ArchiveComponent},
+        // {path: 'followers/:id/:username', component: GithubComponent},
+        // {path: 'followers', component: FollowersComponent},
+        // {path: 'posts', component: PostComponent},
         {path: '**', component: NotfoundComponent}
       ]
     )
